@@ -1,7 +1,11 @@
 package main
 
-import "github.com/TitleKung-01/Go-Bacis/PrintSquare"
+import (
+	"fmt"
+
+	ALLFunction "github.com/TitleKung-01/Go-Bacis/AllFunctions"
+)
 
 func main() {
-	PrintSquare(2)
+	fmt.Println(ALLFunction.Strating(10000,10,5.0))
 }
