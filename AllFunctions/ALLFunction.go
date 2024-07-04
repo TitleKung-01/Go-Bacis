@@ -41,5 +41,6 @@ func Deposit_interest(interest_rate, deposit_amout float64) float64{
 }
 
 func Strating (strating_amount , years , return_rate float64) float64{
-	return strating_amount * math.Pow((1+return_rate/100), years)
+	return strating_amount * math.Pow((1+return_rate/100), float64(years))
 }
+
