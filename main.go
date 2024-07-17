@@ -13,18 +13,18 @@ func main() {
 		fmt.Print(" Enter the number: ")
 		fmt.Scan(&choice)
 
-		// if choice == 1 {
+		if choice == 1 {
 			
-		// } else if choice == 2 {
-		// 	deposit(accountBalance)
-		// 	continue
-		// } else if choice == 3 {
-		// 	withdraw(accountBalance)
-		// 	continue
-		// } else {
-		// 	fmt.Println("Thank you for using FakeBank")
-		// 	break
-		// }
+		} else if choice == 2 {
+			deposit(accountBalance)
+			continue
+		} else if choice == 3 {
+			withdraw(accountBalance)
+			continue
+		} else {
+			fmt.Println("Thank you for using FakeBank")
+			break
+		}
 
 		switch choice {
 		case 1:
@@ -80,3 +80,6 @@ What do you want to do?
   4. Exit
  `)
 }
+
+
+
