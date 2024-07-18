@@ -8,12 +8,6 @@ import (
 )
 
 func main() {
-
-	// var text = readflie()
-	// fmt.Println("Enter the text you want to write: ")
-	// fmt.Scan(&text)
-	// writeText(float64(text))
-	// fmt.Print("Your text is: ", text)
 	var accountBalance, err = getBalanceFromFile() // อ่านค่าจากไฟล์ balance.fakebank
 	if err != nil{ // ถ้ามี error
 		fmt.Println(err) // แสดงข้อความ error
@@ -26,6 +20,17 @@ func main() {
 		fmt.Print(" Enter the number: ") // แสดงข้อความ Enter the number:
 		fmt.Scan(&choice) // รับค่าจากผู้ใช้
 
+		if choice == 1 { // ถ้าผู้ใช้เลือก 0
+			fmt.Println("Your balance is: ", accountBalance ) // แสดงข้อความ Invalid choice
+		}else if choice ==2 {
+			deposit(&accountBalance)
+		}else if choice ==3 {
+			withdraw(&accountBalance)
+		}else {
+			fmt.Println("Goodbye!")
+		}
+
+		
 		switch choice { // ตรวจสอบค่าที่ผู้ใช้เลือก
 		case 1: // ถ้าผู้ใช้เลือก 1
 			fmt.Println("Your balance is: ", accountBalance) // แสดงค่า accountBalance
@@ -99,14 +104,3 @@ func getBalanceFromFile() (accountBalance float64, e error) { // อ่านค
 	return
 }
 
-// func writeText(text float64) {
-// 	textfile := fmt.Sprint(text) // เอาค่า textflie มาเปลี่ยนเป็น string
-// 	os.WriteFile("eiei.eiei", []byte(textfile), 0644)
-// }
-
-// func readflie () (text float64) {
-// 	bytes, _ := os.ReadFile("eiei.eiei") // อ่านไฟล์ balance.fakebank
-// 	textfile := string(bytes)  
-// 	text, _ = strconv.ParseFloat(textfile, 64) // แปลงข้อมูลจาก string เป็น float64
-// 	return 
-// }
